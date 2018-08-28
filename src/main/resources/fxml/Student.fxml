@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane id="AnchorPane" prefHeight="461.0" prefWidth="417.0" style="-fx-border-color: darkblue;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <GridPane layoutX="32.0" layoutY="56.0" prefHeight="388.0" prefWidth="362.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="276.39996337890625" minWidth="10.0" prefWidth="133.6" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="452.4000244140625" minWidth="10.0" prefWidth="170.4" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="82.60001220703126" minHeight="5.000009918212896" prefHeight="31.9999755859375" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="169.79999008178712" minHeight="0.7999938964843736" prefHeight="45.199987792968756" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="228.0000061035156" minHeight="10.0" prefHeight="49.99998779296877" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="228.0000061035156" minHeight="10.0" prefHeight="47.20001831054688" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="228.0000061035156" minHeight="10.0" prefHeight="40.20000610351562" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="228.0000061035156" minHeight="10.0" prefHeight="179.3999938964844" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label prefHeight="18.0" prefWidth="220.0" text="Achternaam" GridPane.rowIndex="1" />
+            <Label text="Voornaam" />
+            <Label text="Adres" GridPane.rowIndex="2" />
+            <TextField fx:id="tfFirstname" GridPane.columnIndex="1" />
+            <TextField fx:id="tfLastname" prefHeight="26.0" prefWidth="210.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Button defaultButton="true" mnemonicParsing="false" onAction="#addStudent" style="-fx-background-color: lightblue;" text="Maak Student" GridPane.rowIndex="3" />
+            <Button mnemonicParsing="false" onAction="#saveStudents" style="-fx-background-color: orange;" text="Bewaar Studenten" GridPane.rowIndex="4" />
+            <Button mnemonicParsing="false" onAction="#loadStudents" style="-fx-background-color: orange;" text="Laad Studenten" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <ListView fx:id="lvStudents" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="5" />
+            <ComboBox fx:id="cbAddress" prefHeight="26.0" prefWidth="209.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <children>
+                  <RadioButton fx:id="rbMan" mnemonicParsing="false" prefHeight="30.0" prefWidth="46.0" selected="true">
+                     <graphic>
+                        <ImageView fitHeight="27.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/male_small.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="tgGender" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="rbWoman" mnemonicParsing="false" prefHeight="30.0" prefWidth="60.0" toggleGroup="$tgGender">
+                     <graphic>
+                        <ImageView fitHeight="27.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/female_small.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </RadioButton>
+               </children>
+            </HBox>
+         </children>
+      </GridPane>
+      <HBox fx:id="hbMsg" layoutX="7.0" layoutY="4.0" prefHeight="26.0" prefWidth="411.0">
+         <children>
+            <Label fx:id="lblMessage" prefHeight="22.0" prefWidth="407.0" style="-fx-background-color: ffda6b;">
+               <HBox.margin>
+                  <Insets right="5.0" />
+               </HBox.margin>
+               <padding>
+                  <Insets left="5.0" right="5.0" />
+               </padding>
+            </Label>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
